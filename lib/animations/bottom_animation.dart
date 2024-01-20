@@ -22,7 +22,7 @@ class _AnimatorState extends State<Animator>
     super.initState();
 
     animationController =
-        AnimationController(duration: const Duration(seconds: 5), vsync: this);
+        AnimationController(duration:const Duration(milliseconds: 290), vsync: this);
     animation = CurvedAnimation(
       parent: animationController,
       curve: Curves.easeInOut,

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:holy_quran_app/extension/media_query_extension.dart';
 import 'package:holy_quran_app/utils/assets.dart';
+import 'package:holy_quran_app/utils/routes/route_name.dart';
 import 'package:provider/provider.dart';
 
 import '../../animations/bottom_animation.dart';
@@ -21,8 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 4), () {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const OnboardingScreen()));
+      Navigator.pushNamed(context,RouteName.onboard);
     });
   }
 

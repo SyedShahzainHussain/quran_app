@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:holy_quran_app/provider/on_board_provider.dart';
-import 'package:holy_quran_app/screens/home/widget/main_screen/main_screen.dart';
+import 'package:holy_quran_app/utils/routes/route_name.dart';
+
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../utils/assets.dart';
+import '../home/home_screen.dart';
 import 'widget/onboarded_widget.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -81,11 +83,8 @@ class OnboardingScreenState extends State<OnboardingScreen> {
               builder: (context, value, _) => TextButton(
                   onPressed: value.index == pages.length - 1
                       ? () {
-                          Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const MainScreen()),
-                              (route) => false);
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, RouteName.home, (route) => false);
                         }
                       : () {
                           pageController.nextPage(

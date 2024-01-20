@@ -33,7 +33,7 @@ class OnBoardingPage extends StatelessWidget {
                   style: Theme.of(context).textTheme.labelSmall!.copyWith(
                       color: context.read<AppProvider>().isDark
                           ? Colors.white
-                          : Colors.black),
+                          : Colors.black,),
                 ),
               ),
               const Spacer(),

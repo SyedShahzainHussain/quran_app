@@ -7,6 +7,7 @@ final themeLight = ThemeData(
   brightness: Brightness.light,
   dividerColor: Colors.white60,
   splashColor: Colors.transparent,
+  useMaterial3: false,
   primaryColor: const Color(0xffee8f8b),
   scaffoldBackgroundColor: Colors.white,
   pageTransitionsTheme: const PageTransitionsTheme(
@@ -26,6 +27,7 @@ final themeLight = ThemeData(
 
 final themeDark = ThemeData(
   fontFamily: fontFamily,
+  useMaterial3: false,
   primaryColor: Colors.black,
   brightness: Brightness.dark,
   dividerColor: Colors.black12,

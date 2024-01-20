@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:holy_quran_app/provider/on_board_provider.dart';
+import 'package:holy_quran_app/utils/routes/route_name.dart';
+import 'package:holy_quran_app/utils/routes/routes.dart';
 import 'package:provider/provider.dart';
 
 import 'configs/core_theme.dart';
@@ -34,7 +36,8 @@ class MyApp extends StatelessWidget {
           themeMode: value.themeMode,
           theme: themeLight,
           darkTheme: themeDark,
-          home: const SplashScreen(),
+          initialRoute: RouteName.splash,
+          onGenerateRoute: AppRoutes.onGenrateRoute,
         ),
       ),
     );
