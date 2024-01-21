@@ -8,7 +8,6 @@ import 'package:provider/provider.dart';
 
 import '../../animations/bottom_animation.dart';
 import '../../provider/app_provider.dart';
-import '../onboarding/onboarding.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -21,11 +20,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+
     Timer(const Duration(seconds: 4), () {
-      Navigator.pushNamed(context,RouteName.onboard);
+      Navigator.pushNamed(context, RouteName.onboard);
     });
   }
 
+ 
   @override
   Widget build(BuildContext context) {
     final appProvider = Provider.of<AppProvider>(context);

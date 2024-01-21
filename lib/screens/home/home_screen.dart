@@ -22,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   void initState() {
     super.initState();
+
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 250),
@@ -103,6 +104,7 @@ class _HomeScreenState extends State<HomeScreen>
         ) as Future<bool>?)) ??
         false;
   }
+
 
   @override
   Widget build(BuildContext context) {

@@ -37,6 +37,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider:
   smooth_page_indicator: ^1.1.0
+  firebase_core:
+  firebase_dynamic_links: ^5.4.8
+  url_launcher: ^6.2.3
+  share_plus: ^7.2.1
+  firebase_analytics: ^10.6.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

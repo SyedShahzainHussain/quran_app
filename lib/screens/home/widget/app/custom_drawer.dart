@@ -64,7 +64,9 @@ class CustomDrawer extends StatelessWidget {
                               ? Colors.grey[800]
                               : Colors.white,
                           child: ListTile(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.pushNamed(context, e["route"]);
+                            },
                             leading: Icon(
                               e["icon"],
                             ),
@@ -77,15 +79,22 @@ class CustomDrawer extends StatelessWidget {
                     color: appProvider.isDark ? Colors.grey[800] : Colors.white,
                     child: ListTile(
                       onTap: () {},
-                      trailing: Switch(
-                          value: value.isDark,
-                          onChanged: (value2) {
-                            if (value2) {
-                              value.setTheme(ThemeMode.dark);
-                            } else {
-                              value.setTheme(ThemeMode.light);
-                            }
-                          }),
+                      trailing: Transform.scale(
+                        scale: 1.2,
+                        child: Switch(
+                            activeColor: Colors.white,
+                            value: value.isDark,
+                            activeTrackColor: appProvider.isDark
+                                ? Colors.white
+                                : Colors.grey[800],
+                            onChanged: (value2) {
+                              if (value2) {
+                                value.setTheme(ThemeMode.dark);
+                              } else {
+                                value.setTheme(ThemeMode.light);
+                              }
+                            }),
+                      ),
                       leading: const Icon(
                         Icons.dark_mode,
                       ),

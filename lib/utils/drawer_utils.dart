@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:holy_quran_app/utils/routes/route_name.dart';
 
 class DrawerUtils {
   static const List item = [
@@ -30,7 +31,7 @@ class DrawerUtils {
     {
       'title': 'Share App',
       'icon': Icons.share_outlined,
-      'route': "",
+      'route': RouteName.share,
     },
   ];
 }
