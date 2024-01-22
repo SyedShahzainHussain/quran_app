@@ -3,6 +3,7 @@ import 'package:holy_quran_app/provider/on_board_provider.dart';
 import 'package:holy_quran_app/utils/routes/route_name.dart';
 
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../utils/assets.dart';
@@ -82,7 +83,10 @@ class OnboardingScreenState extends State<OnboardingScreen> {
             Consumer<OnBoarddingProvider>(
               builder: (context, value, _) => TextButton(
                   onPressed: value.index == pages.length - 1
-                      ? () {
+                      ? () async {
+                          SharedPreferences sharedPreference =
+                              await SharedPreferences.getInstance();
+                          sharedPreference.setBool("onboard", true);
                           Navigator.pushNamedAndRemoveUntil(
                               context, RouteName.home, (route) => false);
                         }

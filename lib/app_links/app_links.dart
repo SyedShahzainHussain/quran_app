@@ -33,7 +33,9 @@ class AppLinks {
         print("deep link query parameters: ${deepLink.queryParameters}");
       }
     }, onError: (error) {
-      print("Error handling dynamic link: $error");
+      if (kDebugMode) {
+        print("Error handling dynamic link: $error");
+      }
     });
   }
 }

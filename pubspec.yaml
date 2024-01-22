@@ -42,6 +42,8 @@ dependencies:
   url_launcher: ^6.2.3
   share_plus: ^7.2.1
   firebase_analytics: ^10.6.0
+  http:
+  shared_preferences: 
 dev_dependencies:
   flutter_test:
     sdk: flutter

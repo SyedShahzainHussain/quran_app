@@ -6,6 +6,7 @@ import 'package:holy_quran_app/screens/home/widget/app/app_button.dart';
 import 'package:holy_quran_app/screens/home/widget/app/app_name.dart';
 import 'package:holy_quran_app/screens/home/widget/app/bottom_text.dart';
 import 'package:holy_quran_app/screens/home/widget/app/rahel.dart';
+import 'package:holy_quran_app/utils/routes/route_name.dart';
 import 'package:provider/provider.dart';
 
 import '../app/app_logo.dart';
@@ -33,7 +34,7 @@ class MainScreen extends StatelessWidget {
                 children: [
                   AppButton(
                       onPressed: () {
-                        AppLinks().createLink();
+                        Navigator.pushNamed(context, RouteName.surah);
                       },
                       title: "Surah Index"),
                   AppButton(onPressed: () {}, title: "Juzz Index"),

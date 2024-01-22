@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:holy_quran_app/app_links/app_links.dart';
 import 'package:holy_quran_app/firebase_options.dart';
 import 'package:holy_quran_app/provider/on_board_provider.dart';
+import 'package:holy_quran_app/screens/surah_index_screen/viewModel/surah_view_model.dart';
 import 'package:holy_quran_app/utils/routes/route_name.dart';
 import 'package:holy_quran_app/utils/routes/routes.dart';
 import 'package:provider/provider.dart';
@@ -18,21 +19,19 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]);
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  AppLinks().initData();
-
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => AppProvider()),
         ChangeNotifierProvider(create: (context) => OnBoarddingProvider()),
+        ChangeNotifierProvider(create: (context) => SurahViewModel()),
       ],
       child: Consumer<AppProvider>(
         builder: (context, value, _) => MaterialApp(

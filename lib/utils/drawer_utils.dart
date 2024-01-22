@@ -6,7 +6,7 @@ class DrawerUtils {
     {
       'title': 'Surah Index',
       'icon': Icons.format_list_numbered_outlined,
-      'route': "",
+      'route': RouteName.surah,
     },
     {
       'title': 'Juz Index',

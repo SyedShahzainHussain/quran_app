@@ -1,0 +1,1 @@
+ const surahIndex = "http://api.alquran.cloud/v1/quran/quran-uthmani";
