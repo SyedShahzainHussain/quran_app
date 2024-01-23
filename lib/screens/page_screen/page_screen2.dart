@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:holy_quran_app/extension/media_query_extension.dart';
-import 'package:holy_quran_app/model/surah_model.dart';
+import 'package:holy_quran_app/model/surahs.dart';
 import 'package:holy_quran_app/provider/app_provider.dart';
 import 'package:holy_quran_app/utils/assets.dart';
 import 'package:provider/provider.dart';
 
-class PageScreen extends StatelessWidget {
+class PageScreen2 extends StatelessWidget {
   final Surahs? surahs;
-  const PageScreen({super.key, this.surahs});
+  const PageScreen2({super.key, this.surahs});
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +108,7 @@ class PageScreen extends StatelessWidget {
                       ),
                     ),
                     title: Text(
-                      surahs!.ayahs![index].text!,
+                      surahs!.ayahs![index]!.text!,
                       textAlign: TextAlign.right,
                       style: TextStyle(
                         fontFamily: 'Noor',

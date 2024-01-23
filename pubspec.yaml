@@ -43,11 +43,16 @@ dependencies:
   share_plus: ^7.2.1
   firebase_analytics: ^10.6.0
   http:
+  dio:
+  # cache
   shared_preferences: 
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  hive_generator: 
+  build_runner: 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your

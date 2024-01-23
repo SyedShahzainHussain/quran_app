@@ -5,5 +5,6 @@ class RouteName {
   static const share = "/share";
   static const surah = "/surah";
   static const page = "/page";
+  static const page2 = "/page2";
 
 }

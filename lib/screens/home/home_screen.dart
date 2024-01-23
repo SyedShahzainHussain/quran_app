@@ -2,10 +2,13 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:holy_quran_app/extension/media_query_extension.dart';
+
 import 'package:holy_quran_app/provider/app_provider.dart';
 import 'package:holy_quran_app/screens/home/widget/app/custom_drawer.dart';
 import 'package:holy_quran_app/screens/home/widget/main_screen/main_screen.dart';
+
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -104,7 +107,6 @@ class _HomeScreenState extends State<HomeScreen>
         ) as Future<bool>?)) ??
         false;
   }
-
 
   @override
   Widget build(BuildContext context) {

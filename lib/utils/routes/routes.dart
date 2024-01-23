@@ -3,10 +3,12 @@ import 'package:holy_quran_app/model/surah_model.dart';
 import 'package:holy_quran_app/screens/home/home_screen.dart';
 import 'package:holy_quran_app/screens/onboarding/onboarding.dart';
 import 'package:holy_quran_app/screens/page_screen/page_screen.dart';
+import 'package:holy_quran_app/screens/page_screen/page_screen2.dart';
 import 'package:holy_quran_app/screens/share/share_screen.dart';
 import 'package:holy_quran_app/screens/splash/splash.dart';
 import 'package:holy_quran_app/screens/surah_index_screen/surah_index_screen.dart';
 import 'package:holy_quran_app/utils/routes/route_name.dart';
+import 'package:holy_quran_app/model/surahs.dart' as hive;
 
 class AppRoutes {
   static Route<dynamic> onGenrateRoute(RouteSettings routeSettings) {
@@ -26,8 +28,15 @@ class AppRoutes {
         );
       case RouteName.page:
         return MaterialPageRoute(
-          builder: (context) =>
-              PageScreen(surahs: routeSettings.arguments as Surahs),
+          builder: (context) => PageScreen(
+            surahs: routeSettings.arguments as Surahs,
+          ),
+        );
+      case RouteName.page2:
+        return MaterialPageRoute(
+          builder: (context) => PageScreen2(
+            surahs: routeSettings.arguments as hive.Surahs,
+          ),
         );
 
       default:
