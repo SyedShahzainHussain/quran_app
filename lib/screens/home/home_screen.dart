@@ -4,12 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:holy_quran_app/extension/media_query_extension.dart';
+import 'package:holy_quran_app/global/global.dart';
 
 import 'package:holy_quran_app/provider/app_provider.dart';
 import 'package:holy_quran_app/screens/home/widget/app/custom_drawer.dart';
 import 'package:holy_quran_app/screens/home/widget/main_screen/main_screen.dart';
 
 import 'package:provider/provider.dart';
+
+import '../juz_screen/view_model/juzz_view_model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -21,15 +24,24 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
+  JuzzViewModel juzzViewModel2 = JuzzViewModel();
 
   @override
   void initState() {
     super.initState();
-
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 250),
     );
+
+    storeAllJuzzToLocalDataBase();
+   
+  }
+
+  void storeAllJuzzToLocalDataBase() {
+    for (var i = 1; i <= 30; i++) {
+      cache.get("juz$i") ?? juzzViewModel2.juzzApi(i);
+    }
   }
 
   late bool _canBeDragged;

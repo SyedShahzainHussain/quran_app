@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/adapters.dart';
+import 'package:flutter/services.dart';
+// import 'package:hive_flutter/adapters.dart';
 import 'package:holy_quran_app/extension/media_query_extension.dart';
+import 'package:holy_quran_app/screens/juz_screen/view_model/juzz_view_model.dart';
 import 'package:holy_quran_app/screens/surah_index_screen/viewModel/surah_view_model.dart';
 import 'package:provider/provider.dart';
 
 import '../../../provider/app_provider.dart';
 
-class SurahTextField extends StatelessWidget {
+class JuzTextField extends StatelessWidget {
   final AppProvider? appProvider;
-  const SurahTextField({
+  const JuzTextField({
     super.key,
     this.appProvider,
   });
 
   @override
   Widget build(BuildContext context) {
-    final cache = Hive.box('data');
+    // final cache = Hive.box('data');
     return Container(
       height: context.screenheight * .05,
       margin: EdgeInsets.only(
@@ -23,23 +25,18 @@ class SurahTextField extends StatelessWidget {
         left: context.screenwidth * .02,
         right: context.screenwidth * .02,
       ),
-      child: Consumer<SurahViewModel>(
-        builder: (context, data, _) => TextField(
+      child: Consumer<JuzzViewModel>(
+        builder: (context, value, _) => TextField(
             cursorColor: appProvider!.isDark ? Colors.white : Colors.black,
             style: Theme.of(context).textTheme.labelLarge!.copyWith(
                   color: appProvider!.isDark ? Colors.white : Colors.black,
                 ),
             onChanged: (value) {
-              cache.get("surahs") == null
-                  ? data.updateSurahList(
-                      value,
-                    )
-                  : data.updatesSurahListsFromLocalBase(
-                      value,
-                    );
+              context.read<JuzzViewModel>().searchJuz(value);
             },
+            keyboardType: TextInputType.number,
             decoration: InputDecoration(
-              hintText: 'Search Surah here...',
+              hintText: 'Search Juz Number here...',
               hintStyle: Theme.of(context).textTheme.labelLarge!.copyWith(
                     color: appProvider!.isDark ? Colors.white : Colors.black,
                   ),

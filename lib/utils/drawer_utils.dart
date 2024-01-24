@@ -11,7 +11,7 @@ class DrawerUtils {
     {
       'title': 'Juz Index',
       'icon': Icons.list,
-      'route': "",
+      'route': RouteName.juz,
     },
     {
       'title': 'Bookmarks',

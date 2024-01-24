@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:holy_quran_app/extension/media_query_extension.dart';
-import 'package:holy_quran_app/model/surah_model.dart';
-import 'package:holy_quran_app/model/surahs.dart' as hive_surah;
+import 'package:holy_quran_app/model/surah/surah_model.dart';
+import 'package:holy_quran_app/model/surah/surahs.dart' as hive_surah;
 import 'package:holy_quran_app/provider/app_provider.dart';
 
 // import '../../../model/surah_model.dart';

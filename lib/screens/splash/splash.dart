@@ -8,7 +8,9 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../animations/bottom_animation.dart';
+import '../../global/global.dart';
 import '../../provider/app_provider.dart';
+import 'package:holy_quran_app/screens/surah_index_screen/viewModel/surah_view_model.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,11 +20,13 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  SurahViewModel surahViewModel3 = SurahViewModel();
   @override
   void initState() {
     super.initState();
 
     Timer(const Duration(seconds: 4), () async {
+      cache.get("surahs") ?? await surahViewModel3.surahsApi();
       SharedPreferences sharedPreferences =
           await SharedPreferences.getInstance();
       bool? isUserOnBoard = sharedPreferences.getBool("onboard") ?? false;
@@ -30,10 +34,9 @@ class _SplashScreenState extends State<SplashScreen> {
         // ignore: use_build_context_synchronously
         Navigator.pushNamedAndRemoveUntil(
             context, RouteName.home, (route) => false);
-      }else{
-
-      // ignore: use_build_context_synchronously
-      Navigator.pushNamed(context, RouteName.onboard);
+      } else {
+        // ignore: use_build_context_synchronously
+        Navigator.pushNamed(context, RouteName.onboard);
       }
     });
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:holy_quran_app/animations/bottom_animation.dart';
 import 'package:holy_quran_app/extension/media_query_extension.dart';
-import 'package:holy_quran_app/model/surah_model.dart';
+import 'package:holy_quran_app/model/surah/surah_model.dart';
 import 'package:holy_quran_app/provider/app_provider.dart';
 import 'package:holy_quran_app/utils/assets.dart';
 import 'package:provider/provider.dart';
@@ -84,35 +85,37 @@ class PageScreen extends StatelessWidget {
               SliverList(
                   delegate: SliverChildBuilderDelegate(
                 childCount: surahs!.ayahs!.length,
-                (context, index) => Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: ListTile(
-                    contentPadding: const EdgeInsets.all(8.0),
-                    trailing: CircleAvatar(
-                      radius: 13.9,
-                      backgroundColor: const Color(0xff04364f),
-                      child: CircleAvatar(
-                        radius: 10.9,
-                        backgroundColor: Colors.white,
-                        child: FittedBox(
-                          child: Text(
-                            "${(index + 1)}",
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelSmall!
-                                .copyWith(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
+                (context, index) => WidgetAnimation(
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: ListTile(
+                      contentPadding: const EdgeInsets.all(8.0),
+                      trailing: CircleAvatar(
+                        radius: 13.9,
+                        backgroundColor: const Color(0xff04364f),
+                        child: CircleAvatar(
+                          radius: 10.9,
+                          backgroundColor: Colors.white,
+                          child: FittedBox(
+                            child: Text(
+                              "${(index + 1)}",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelSmall!
+                                  .copyWith(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    title: Text(
-                      surahs!.ayahs![index].text!,
-                      textAlign: TextAlign.right,
-                      style: TextStyle(
-                        fontFamily: 'Noor',
-                        fontSize: context.screenheight * 0.0275,
+                      title: Text(
+                        surahs!.ayahs![index].text!,
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                          fontFamily: 'Noor',
+                          fontSize: context.screenheight * 0.0275,
+                        ),
                       ),
                     ),
                   ),

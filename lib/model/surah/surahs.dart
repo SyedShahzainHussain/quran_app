@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:hive/hive.dart';
-import 'package:holy_quran_app/model/ayah.dart';
+import 'package:holy_quran_app/model/surah/ayah.dart';
 
 part 'surahs.g.dart';
 
