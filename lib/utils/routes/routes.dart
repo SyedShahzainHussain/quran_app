@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:holy_quran_app/model/surah/surah_model.dart';
+import 'package:holy_quran_app/screens/bookmarks/boomark_screen.dart';
 import 'package:holy_quran_app/screens/home/home_screen.dart';
 import 'package:holy_quran_app/screens/juz_screen/page_screen/juzz_page_screen.dart';
 import 'package:holy_quran_app/screens/onboarding/onboarding.dart';
@@ -49,6 +50,10 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) =>
               JuzzPageScreen(juzzIndex: routeSettings.arguments as int),
+        );
+      case RouteName.bookMark:
+        return MaterialPageRoute(
+          builder: (context) => const BookMarkScreen(),
         );
 
       default:

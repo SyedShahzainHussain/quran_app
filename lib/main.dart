@@ -16,6 +16,7 @@ import 'package:provider/provider.dart';
 import 'configs/core_theme.dart';
 import 'model/surah/surahs.dart';
 import 'provider/app_provider.dart';
+import 'screens/bookmarks/viewModel/bookmark_view_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => OnBoarddingProvider()),
         ChangeNotifierProvider(create: (context) => SurahViewModel()),
         ChangeNotifierProvider(create: (context) => JuzzViewModel()),
+        ChangeNotifierProvider(create: (context) => BookMarkViewModel()),
       ],
       child: Consumer<AppProvider>(
         builder: (context, value, _) => MaterialApp(

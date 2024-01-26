@@ -6,6 +6,8 @@ import 'package:holy_quran_app/provider/app_provider.dart';
 import 'package:holy_quran_app/utils/assets.dart';
 import 'package:provider/provider.dart';
 
+import '../../bookmarks/viewModel/bookmark_view_model.dart';
+
 class PageScreen2 extends StatelessWidget {
   final Surahs? surahs;
   const PageScreen2({super.key, this.surahs});
@@ -21,13 +23,25 @@ class PageScreen2 extends StatelessWidget {
             slivers: [
               SliverAppBar(
                 actions: [
-                  IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.bookmark_added,
-                        color:
-                            appProvider.isDark ? Colors.white : Colors.black54,
-                      ))
+                  Consumer<BookMarkViewModel>(
+                    builder: (context, value, _) => Column(
+                      children: [
+                        IconButton(
+                            onPressed: () {
+                              value.addBookmark(surahs!);
+                              // print(value.bookmarks.contains(surahs!));
+                            },
+                            icon: Icon(
+                              value.isSurahBookmarked(surahs!)
+                                  ? Icons.bookmark_added
+                                  : Icons.bookmark_border_outlined,
+                              color: appProvider.isDark
+                                  ? Colors.white
+                                  : Colors.black54,
+                            )),
+                      ],
+                    ),
+                  )
                 ],
                 leading: BackButton(
                   color: appProvider.isDark ? Colors.white : Colors.black54,
@@ -40,9 +54,9 @@ class PageScreen2 extends StatelessWidget {
                   centerTitle: true,
                   title: Text(
                     surahs!.englishName!,
-                    textAlign: TextAlign.center,
                   ),
                   background: Stack(
+                    alignment: Alignment.center,
                     children: [
                       Align(
                         alignment: Alignment.bottomRight,
@@ -57,6 +71,7 @@ class PageScreen2 extends StatelessWidget {
                       Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Text(
                               surahs!.englishNameTranslation!,

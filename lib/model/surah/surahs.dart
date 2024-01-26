@@ -6,7 +6,7 @@ import 'package:holy_quran_app/model/surah/ayah.dart';
 part 'surahs.g.dart';
 
 @HiveType(typeId: 1)
-class Surahs {
+class Surahs  {
   @HiveField(0)
   final int? number;
   @HiveField(1)
@@ -58,4 +58,6 @@ class Surahs {
   String toString() {
     return 'Surahs(number: $number, name: $name, englishName: $englishName, englishNameTranslation: $englishNameTranslation, revelationType: $revelationType, ayahs: $ayahs)';
   }
+
+
 }

@@ -16,7 +16,7 @@ class DrawerUtils {
     {
       'title': 'Bookmarks',
       'icon': Icons.bookmark_outline,
-      'route': "",
+      'route': RouteName.bookMark,
     },
     {
       'title': 'Help Guide',

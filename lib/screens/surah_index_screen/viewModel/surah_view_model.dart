@@ -88,9 +88,17 @@ class SurahViewModel with ChangeNotifier {
     }
   }
 
+  List<su.Surahs> _tempList = [];
+  List<su.Surahs> get tempList => _tempList;
+
+  // ! clear the tempList
+  void clearTempList() {
+    _tempList.clear();
+    notifyListeners();
+  }
+
   // ! update Surah By Searching
   void updateSurahList(String searchValue) {
-    print("surah internat ${originalSurahs.length}");
     if (searchValue.isEmpty) {
       // * If the search value is empty, reset the surah list to the original data
       surahList.data!.data!.surahs = List.from(originalSurahs);
@@ -115,13 +123,12 @@ class SurahViewModel with ChangeNotifier {
 
   // ! searching localstorage surah
   void updatesSurahListsFromLocalBase(String searchValue) {
-    print("surah local ${originalSurahs.length}");
     if (searchValue.isEmpty) {
       // * If the search value is empty, reset the surah list to the original data
-      dataList.data!.surahs = List.from(originalSurahs);
+      _tempList = [];
     } else {
       // *  If there is a search value, filter the surahs based on the search criteria
-      dataList.data!.surahs = originalSurahs
+      _tempList = originalSurahs
           .where((surah) =>
               surah.englishName!
                   .toLowerCase()

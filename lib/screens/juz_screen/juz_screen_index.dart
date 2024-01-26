@@ -10,8 +10,21 @@ import 'package:provider/provider.dart';
 import '../../utils/routes/route_name.dart';
 import '../../widget/flare.dart';
 
-class JuzIndexScreen extends StatelessWidget {
+class JuzIndexScreen extends StatefulWidget {
   const JuzIndexScreen({super.key});
+
+  @override
+  State<JuzIndexScreen> createState() => _JuzIndexScreenState();
+}
+
+class _JuzIndexScreenState extends State<JuzIndexScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      context.read<JuzzViewModel>().clearSearchValue();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

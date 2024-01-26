@@ -31,7 +31,11 @@ class _SurahIndexScreenState extends State<SurahIndexScreen> {
   @override
   void initState() {
     super.initState();
+
     getLocalData();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      context.read<SurahViewModel>().clearTempList();
+    });
   }
 
   // * if there is no data base of this name then this method will call
@@ -114,13 +118,17 @@ class _SurahIndexScreenState extends State<SurahIndexScreen> {
                             child: ListView.separated(
                               keyboardDismissBehavior:
                                   ScrollViewKeyboardDismissBehavior.onDrag,
-                              itemCount: value.dataList.data!.surahs!.length,
+                              itemCount: value.tempList.isEmpty
+                                  ? value.dataList.data!.surahs!.length
+                                  : value.tempList.length,
                               separatorBuilder: (context, index) =>
                                   const Divider(
                                 color: Color(0xffee8f8b),
                               ),
                               itemBuilder: (context, index) {
-                                final chapters = value.dataList.data!.surahs!;
+                                final chapters = value.tempList.isEmpty
+                                    ? value.dataList.data!.surahs!
+                                    : value.tempList;
                                 return InkWell(
                                   onTap: () {
                                     Navigator.pushNamed(

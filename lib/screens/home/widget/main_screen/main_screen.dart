@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:holy_quran_app/app_links/app_links.dart';
 import 'package:holy_quran_app/extension/media_query_extension.dart';
 import 'package:holy_quran_app/provider/app_provider.dart';
 import 'package:holy_quran_app/screens/home/widget/app/app_button.dart';
@@ -43,7 +42,11 @@ class MainScreen extends StatelessWidget {
                         Navigator.pushNamed(context, RouteName.juz);
                       },
                       title: "Juzz Index"),
-                  AppButton(onPressed: () {}, title: "Bookmarks"),
+                  AppButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, RouteName.bookMark);
+                      },
+                      title: "Bookmarks"),
                 ],
               ),
             ),

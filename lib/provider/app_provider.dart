@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-// final themeMap = {
-//   "dark": ThemeMode.dark,
-//   "light": ThemeMode.light,
-// };
 
 class AppProvider with ChangeNotifier {
   static const String themeKey = 'theme_mode';

@@ -67,16 +67,6 @@ class _JuzzPageScreenState extends State<JuzzPageScreen> {
                               child: CustomScrollView(
                                 slivers: [
                                   SliverAppBar(
-                                    actions: [
-                                      IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(
-                                            Icons.bookmark_added,
-                                            color: appProvider.isDark
-                                                ? Colors.white
-                                                : Colors.black54,
-                                          ))
-                                    ],
                                     leading: BackButton(
                                       color: appProvider.isDark
                                           ? Colors.white
@@ -200,16 +190,6 @@ class _JuzzPageScreenState extends State<JuzzPageScreen> {
                               child: CustomScrollView(
                                 slivers: [
                                   SliverAppBar(
-                                    actions: [
-                                      IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(
-                                            Icons.bookmark_added,
-                                            color: appProvider.isDark
-                                                ? Colors.white
-                                                : Colors.black54,
-                                          ))
-                                    ],
                                     leading: BackButton(
                                       color: appProvider.isDark
                                           ? Colors.white

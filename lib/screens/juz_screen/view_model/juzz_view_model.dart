@@ -25,6 +25,11 @@ class JuzzViewModel with ChangeNotifier {
     notifyListeners();
   }
 
+  clearSearchValue() {
+    searchedJuzName = "";
+    notifyListeners();
+  }
+
   final List<String> _juzNames = [
     'آلم',
     'سَيَقُولُ',

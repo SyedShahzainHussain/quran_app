@@ -8,5 +8,6 @@ class RouteName {
   static const page2 = "/page2";
   static const juz = "/juz";
   static const juzPage = "/juz_page";
+  static const bookMark = "/bookmark";
 
 }
