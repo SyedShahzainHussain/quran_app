@@ -19,14 +19,9 @@ class DrawerUtils {
       'route': RouteName.bookMark,
     },
     {
-      'title': 'Help Guide',
-      'icon': Icons.help_outline,
-      'route': "",
-    },
-    {
       'title': 'Introduction',
       'icon': Icons.info_outline,
-      'route': "",
+      'route': RouteName.onboard,
     },
     {
       'title': 'Share App',

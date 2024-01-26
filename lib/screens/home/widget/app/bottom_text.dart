@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class BottomText extends StatelessWidget {
@@ -12,17 +11,18 @@ class BottomText extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Text(
-              "\"Indeed, It is We who sent down the Qur'an\nand indeed, We will be its Guardian\"",
-              textAlign: TextAlign.center,
-              style:
-                  Theme.of(context).textTheme.labelMedium!.copyWith()),
+          SizedBox(
+            height: 30,
+            child: Text(
+                "\"Indeed, It is We who sent down the Qur'an\nand indeed, We will be its Guardian\"",
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.labelMedium!.copyWith()),
+          ),
           const SizedBox(
             height: 20,
           ),
           Text("Surah Al-Hijr\n",
-              style:
-                  Theme.of(context).textTheme.labelMedium!.copyWith()),
+              style: Theme.of(context).textTheme.labelMedium!.copyWith()),
         ],
       ),
     );

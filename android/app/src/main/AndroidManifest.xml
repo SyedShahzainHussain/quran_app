@@ -18,7 +18,7 @@
     </queries>
 
     <application
-        android:label="holy_quran_app"
+        android:label="The Holy Quran"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

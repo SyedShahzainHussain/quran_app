@@ -5,14 +5,11 @@ import 'package:flutter/services.dart';
 
 import 'package:holy_quran_app/extension/media_query_extension.dart';
 
-
 import 'package:holy_quran_app/provider/app_provider.dart';
 import 'package:holy_quran_app/screens/home/widget/app/custom_drawer.dart';
 import 'package:holy_quran_app/screens/home/widget/main_screen/main_screen.dart';
 
 import 'package:provider/provider.dart';
-
-
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -21,10 +18,8 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
-    with SingleTickerProviderStateMixin {
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late AnimationController animationController;
- 
 
   @override
   void initState() {
@@ -33,12 +28,7 @@ class _HomeScreenState extends State<HomeScreen>
       vsync: this,
       duration: const Duration(milliseconds: 250),
     );
-
- 
-   
   }
-
-  
 
   late bool _canBeDragged;
 

@@ -7,7 +7,10 @@ class BookMarkViewModel with ChangeNotifier {
   List<Surahs> get bookmarks => _bookmarks;
 
   BookMarkViewModel() {
+    if (cache.get("bookmarks") != null) {
+   
     getBookMarkFromLocalDatabase();
+    }
   }
 
   void addBookmark(Surahs bookmark) async {
@@ -61,6 +64,6 @@ class BookMarkViewModel with ChangeNotifier {
   }
 
   bool isSurahBookmarked(Surahs surahs) {
-   return _bookmarks.any((element) => element.name == surahs.name);
+    return _bookmarks.any((element) => element.name == surahs.name);
   }
 }

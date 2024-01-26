@@ -11,8 +11,7 @@ class Animator extends StatefulWidget {
   State<Animator> createState() => _AnimatorState();
 }
 
-class _AnimatorState extends State<Animator>
-    with SingleTickerProviderStateMixin {
+class _AnimatorState extends State<Animator> with TickerProviderStateMixin {
   late AnimationController animationController;
   late Animation animation;
   late Timer timer;
